@@ -1,4 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+
+import Books from './component/bookcomponent'
 
 function App(){
 
@@ -21,7 +23,7 @@ function App(){
         <p>Loading...</p>
       ): (
         data.members.map((member, i)=>(
-          <p key = {i}>{member}</p>
+          <p key = {i}><Books ></Books></p>
         ))
       )}
     </div>
