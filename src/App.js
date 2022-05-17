@@ -1,33 +1,14 @@
-import React, {useState, useEffect} from 'react';
-
+import React from 'react';
+import './App.css';
 import Books from './component/bookcomponent'
 
-function App(){
-
-  const [data, setData] = useState([{}])
-
-    useEffect(()=>{
-      fetch("/members").then(
-        res=> res.json()
-      ).then(
-        data =>{
-          setData(data)
-          console.log(data)
-        }
-      )
-    }, [])
+function App() {
 
   return (
     <div>
-      {(typeof data.members === 'undefined')?(
-        <p>Loading...</p>
-      ): (
-        data.members.map((member, i)=>(
-          <p key = {i}><Books ></Books></p>
-        ))
-      )}
+      <Books />
     </div>
   )
 }
 
-export default App
+export default App;
